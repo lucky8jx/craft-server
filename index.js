@@ -7,7 +7,7 @@ const fs = require('fs');
 
 const app = new Koa();
 
-const apiUrl = 'http://120.27.21.73:8280';
+const apiUrl = 'http://120.27.21.73:8380';
 
 app.use(async (ctx, next) => {
     if(ctx.url.startsWith('/api')) {    // 以api开头的异步请求接口都会被转发

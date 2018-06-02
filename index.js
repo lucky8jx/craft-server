@@ -13,7 +13,7 @@ app.use(async (ctx, next) => {
     if(ctx.url.startsWith('/api')) {    // 以api开头的异步请求接口都会被转发
         ctx.respond = false;
         return proxy({
-            target: url, // 服务器地址
+            target: apiUrl, // 服务器地址
             changeOrigin: true,
             secure: false,
             // pathRewrite: {
@@ -27,6 +27,7 @@ app.use(async (ctx, next) => {
     }
     // ...这里省略N个接口
     return next();
+    
 });
 
 // 指定静态资源文件夹
